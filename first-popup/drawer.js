@@ -119,6 +119,8 @@ function handleSkip() {
   if (!isSkipedFirstTime) {
     if (!oneTimeClicked) {
       ratting = null;
+    } else {
+      feedback = null;
     }
     handleNext();
     isSkipedFirstTime = true;

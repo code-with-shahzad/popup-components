@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sliding drawer</title>
+    <link rel="stylesheet" href="./drawer.css">
+</head>
+
+<body>
+    <div class="drawer-main">
+        <div id="drawer-box" class="drawer">
+            <div class="top">
+                <div id="ratting-container" class="drawer-items-main">
+                    <div class="drawer-title">How likely are you to recommend us to friend or colleague?</div>
+                    <div id="drawer-items" class="drawer-items">
+                    </div>
+                    <div class="feedback-text">
+                        <div>Not likely at all</div>
+                        <div>Extremely likely</div>
+                    </div>
+                </div>
+                <div id="textareae-container" class="hide">
+                    <div class="drawer-title">What's reason for your score?</div>
+                    <textarea class="textarea" id="textarea" placeholder="Please type here..."></textarea>
+                </div>
+                <div id="alert" class="hide">
+                    <div class="message">Thanks for your feedback!</div>
+                </div>
+                <div class="btn-container">
+                    <div id="skip" onclick="expandDrawer()" class="skip">Skip</div>
+                    <button onclick="handleNext(true)" id="next-btn" type="button" class="btn-inactive">Next</button>
+                </div>
+            </div>
+            <div onclick="expandDrawer()" class="feedback">
+                    <p>
+                        Feedback
+                    </p>
+                    <div class="slide-wrapper" id="feedback">
+                        <div id="vector-wrapper">
+                            <span class="icon feedback-icon"></span>
+                            <span class="icon slider"></span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+<script src="./drawer.js"></script>
+</body>
+</html>

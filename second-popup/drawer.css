@@ -65,11 +65,6 @@ body {
   transform: rotate(-90deg) translateX(-70px) translateY(17px);
   color: #fff;
 }
-.feedback img {
-  transform: rotate(0deg) translateX(10px) translateY(47px);
-  color: #fff;
-  width: 12px;
-}
 .feedback {
   border-right: 30px solid #3b5998; 
   width: 0;
@@ -98,6 +93,7 @@ body {
   display: flex;
   gap: 5px;
   overflow-x: auto;
+  margin-top: 5px;
 }
 .drawer-items-main {
   margin-bottom: 10px;
@@ -153,12 +149,6 @@ body {
   padding: 10px;
   gap: 20px;
 }
-.slide-wrapper {
-  position: relative;
-  transform: rotate(0deg) translateX(10px) translateY(47px);
-  color: #fff;
-  width: 12px;
-}
 .alert {
   display: block;
   text-align: center;
@@ -169,8 +159,9 @@ body {
   font-weight: 500;
 }
 .slide-img {
-  width: 10px;
+ width: 10px;
  position: absolute;
+ top: 0;
 }
 .slide-wrapper {
   position: relative;

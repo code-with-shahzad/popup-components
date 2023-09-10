@@ -1,10 +1,4 @@
- @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
-body {
-  margin: 0;
-  font-family: poppins;
-  width: 100%;
-  overflow: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap');
 @font-face {
   font-family: "hotjar";
   src: url(https://script.hotjar.com/font-hotjar_5.f4b154.eot);
@@ -22,6 +16,41 @@ body {
 }
 .icon{
     font-family: 'hotjar' !important;
+}
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.drawer-main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+.drawer {
+  height: fit-content;
+  width: 350px;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  box-shadow: 0px 0px 8px #888888;
+  border-radius: 8px 0 0 8px;
+}
+.drawer.expand{
+    transform: translateX(0);
+}
+.drawer-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.top {
+  padding: 15px;
 }
 .commentIcon:before {
   content: "\e900";
@@ -116,7 +145,7 @@ body {
 }
 .slide-wrapper {
   position: relative;
-  transform: rotate(0deg) translateX(10px) translateY(47px);
+  transform: rotate(0deg) translateX(9px) translateY(47px);
   color: #fff;
   width: 12px;
 }
@@ -126,36 +155,8 @@ body {
   position: absolute;
   font-size: 10px;
 }
-.drawer-main {
-  box-sizing: border-box;
-  float: right;
-  position: absolute;
-  right: 0;
-  bottom: 35%;
-  margin-left: 12%;
-}
-.drawer {
-  height: 100%;
-  width: 350px;
-  background-color: #fff;
-  transform: translateX(100%);
-  transition: transform 0.5s;
-  box-shadow: 0px 0px 8px #888888;
-  border-radius: 8px 0 0 8px;
-}
-.drawer.expand{
-    transform: translateX(0);
-}
-.drawer-title {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-}
-.top {
-  padding: 15px 15px 0px 15px;
-}
 .feedback p {
-  transform: rotate(-90deg) translateX(-70px) translateY(17px);
+  transform: rotate(-90deg) translateX(-60px) translateY(17px);
   color: #fff;
 }
 .feedback {
@@ -224,7 +225,7 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 10px;
+  padding-top: 10px;
   gap: 20px;
 }
 .alert {

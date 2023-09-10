@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap');
 @font-face {
   font-family: "hotjar";
   src: url(https://script.hotjar.com/font-hotjar_5.f4b154.eot);
@@ -19,10 +19,60 @@
 }
 body {
   margin: 0;
-  font-family: poppins;
+  font-family: Roboto, sans-serif !important;
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
+.drawer-main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+.drawer {
+  width: 350px;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  box-shadow: 0px 0px 8px #888888;
+  border-radius: 8px 0 0 8px;
+}
+.drawer.expand{
+  transform: translateX(0);
+}
+.btn-container {
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+}
+.skip {
+  text-decoration: underline;
+  color: #4e5156;
+  cursor: pointer;
+}
+.btn-active {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  background: #3061cc;
+  color: #fff;
+ }
+ .btn-inactive {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: #a3a4a4;
+ }
 .feedback-icon:before {
   content: "\e900";
   color: #fff;
@@ -35,50 +85,29 @@ body {
   position: absolute;
   font-size: 10px;
 }
-
-.drawer-main {
-  box-sizing: border-box;
-  float: right;
-  position: absolute;
-  right: 0;
-  bottom: 35%;
-  margin-left: 12%;
-}
-.drawer {
-  height: 100%;
-  width: 400px;
-  background-color: #fff;
-  transform: translateX(100%);
-  transition: transform 0.5s;
-  box-shadow: 0px 0px 8px #888888;
-  border-radius: 8px 0 0 8px;
-}
-.drawer.expand{
-    transform: translateX(0);
-}
-.drawer-title {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-}
-.feedback p {
-  transform: rotate(-90deg) translateX(-70px) translateY(17px);
-  color: #fff;
-}
-.feedback {
-  border-right: 30px solid #3b5998; 
-  width: 0;
-  height: 125px;
-  border-radius: 5px 0 0 5px;
-  position: absolute;
-  left: -29px;
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  cursor: pointer;
-}
-.top {
-  padding: 15px 15px 0px 15px;
+  .drawer-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .feedback p {
+    transform: rotate(-90deg) translateX(-60px) translateY(17px);
+    color: #fff;
+  }
+  .feedback {
+    border-right: 30px solid #3b5998; 
+    width: 0;
+    height: 125px;
+    border-radius: 5px 0 0 5px;
+    position: absolute;
+    left: -29px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .top {
+  padding: 15px;
 }
 .hide {
   display: none;
@@ -86,7 +115,7 @@ body {
 .feedback-text {
   display: flex;
   justify-content: space-between;
-  color: #a3a4a4;
+  color: #4e5156;
   font-size: 13px;
 }
 .drawer-items {
@@ -94,15 +123,19 @@ body {
   gap: 5px;
   overflow-x: auto;
   margin-top: 5px;
+  justify-content: center;
 }
 .drawer-items-main {
   margin-bottom: 10px;
 }
 .drawer-btn {
     height: 30px;
-    width: 100%;
+    margin-top: 10px;
     cursor: pointer;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .drawer-btn-active {
   background: #3061cc;
@@ -118,36 +151,6 @@ body {
   border-radius: 5px;
   padding: 8px;
   margin: 5px 0;
-}
-.btn-inactive {
- padding: 10px 20px;
- border-radius: 5px;
- border: none;
- pointer-events: none;
- cursor: not-allowed;
- color: #a3a4a4;
-}
-.skip {
-  text-decoration: underline;
-  color: #4e5156;
-  cursor: pointer;
-}
-.btn-active {
- padding: 10px 20px;
- border-radius: 5px;
- border: none;
- cursor: pointer;
- pointer-events: all;
- background: #3061cc;
- color: #fff;
-}
-.btn-container {
-  border-top: 1px solid #e8e8e8;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 10px;
-  gap: 20px;
 }
 .alert {
   display: block;
@@ -165,17 +168,22 @@ body {
 }
 .slide-wrapper {
   position: relative;
-  transform: rotate(0deg) translateX(10px) translateY(47px);
+  transform: rotate(0deg) translateX(9px) translateY(47px);
   color: #fff;
   width: 12px;
 }
 @media (max-width:450px) {
     .drawer {
-        width:85vw;
+        width: 300px;  
     }
 }
 @media (max-width:430px) {
     .drawer-items{
-        overflow-x: scroll;
-   }
+        overflow-x: auto;
+      }
+}
+@media (max-width: 350px) {
+  .drawer {
+    width: 260px;  
+}
 }

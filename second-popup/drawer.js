@@ -35,7 +35,6 @@ for (let i = 0; i < 11; i++) {
 function handleReset() {
   oneTimeClicked = false;
   isSkipedFirstTime = false;
-  ratting = null;
   activeButtonValue = null;
   feedback = null;
   nextButton.innerHTML = "Next";
@@ -110,7 +109,7 @@ function handleNext() {
 function handleSkip() {
   if (!isSkipedFirstTime) {
     if (!oneTimeClicked) {
-      ratting = null;
+      activeButtonValue = null;
     } else {
       feedback = null;
     }

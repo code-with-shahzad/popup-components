@@ -92,7 +92,7 @@ function handleValueChange(event) {
   }
 }
 
-function handleNext(isCliked) {
+function handleNext() {
   if (nextButton.innerHTML === "Close") {
     expandDrawer();
   } else if (!oneTimeClicked) {
@@ -101,7 +101,7 @@ function handleNext(isCliked) {
     textareaContainer.classList.add("textarea-container");
     nextButton.classList.remove("btn-active");
     nextButton.classList.add("btn-inactive");
-    oneTimeClicked = isCliked;
+    oneTimeClicked = true;
   } else {
     alert.classList.remove("hide");
     skipBtn.classList.add("hide");

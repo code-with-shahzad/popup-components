@@ -17,6 +17,7 @@ let feedback = null;
 let oneTimeClicked = false;
 let activeIcon = null;
 
+// rest function to reset values call it if needed
 function handleReset() {
   activeIcon = null;
   content.forEach((item) => {
@@ -64,9 +65,7 @@ function expandDrawer() {
     feedbackElement.append(imgTag);
     vectorWrapper.classList.add("hide");
   }
-  setTimeout(() => {
-    handleReset();
-  }, 300);
+    // handleReset();
 }
 
 function handleClickOnImage(value) {

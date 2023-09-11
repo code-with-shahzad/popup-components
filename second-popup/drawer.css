@@ -108,10 +108,11 @@ body {
   text-align: center;
   font-size: 14px;
   color: #111111;
-  font-weight: 600;
+  padding-bottom: 4px;
+  font-weight: bold;
 }
   .feedback p {
-    transform: rotate(-90deg) translateX(-60px) translateY(17px);
+    transform: rotate(-90deg) translateX(-60px) translateY(16px);
     color: #fff;
   }
   .feedback {
@@ -182,9 +183,14 @@ body {
   resize: none;
   width: 90%;
   height: 80px;
-  border-radius: 5px;
-  padding: 8px;
-  margin: 5px 0;
+  border-radius: 4px;
+  padding: 6px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #838696;
+  &::placeholder {
+    color: #838696;
+    font-size: 15px;
+  }
   &:focus-within {
     outline-color: #324fbe !important;
     outline: 2px solid;

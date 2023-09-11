@@ -35,6 +35,7 @@ for (let i = 0; i < 11; i++) {
   drawerItems.appendChild(button);
 }
 
+// rest function to reset values call it if needed
 function handleReset() {
   oneTimeClicked = false;
   activeButtonValue = null;
@@ -67,9 +68,7 @@ function expandDrawer() {
     feedbackElement.append(imgTag);
     vectorWrapper.classList.add("hide");
   }
-  setTimeout(() => {
-    handleReset();
-  }, 300);
+  // handleReset();
 }
 
 textarea.addEventListener("input", handleValueChange);

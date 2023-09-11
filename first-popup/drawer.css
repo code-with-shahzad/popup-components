@@ -70,7 +70,7 @@ body {
 .content {
   opacity: 0;
   position: absolute;
-  bottom: -8px;
+  bottom: -13px;
   font-size: 12px;
   left: 9px;
   color: #a3a4a4;
@@ -255,12 +255,11 @@ body {
 .alert {
   display: block;
   text-align: center;
-  height: 100px;
 }
 .message {
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .slide-img {
   width: 10px;

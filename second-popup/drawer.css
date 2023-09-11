@@ -135,12 +135,13 @@ body {
 .feedback-text {
   display: flex;
   justify-content: space-between;
-  color: #4e5156;
-  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+  font-size: 12px;
+  margin-left: 2px;
 }
 .drawer-items {
   display: flex;
-  gap: 3.5px;
+  gap: 4px;
   overflow-x: auto;
   margin-top: 5px;
   justify-content: center;
@@ -193,12 +194,11 @@ body {
 .alert {
   display: block;
   text-align: center;
-  height: 100px;
 }
 .message {
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .slide-img {
  width: 10px;

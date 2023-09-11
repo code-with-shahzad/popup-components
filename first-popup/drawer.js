@@ -72,6 +72,9 @@ function handleClickOnImage(value) {
   content.forEach((icon) => {
     icon.classList.remove("active");
   });
+  commentIcon.forEach(icon=> {
+    icon.classList.remove('icon-active')
+  })
   let iconElement = null;
   let contentElement = null;
   contentElement = document.querySelector(`.content-${value.toLowerCase()}`);
@@ -79,7 +82,7 @@ function handleClickOnImage(value) {
   if (contentElement && iconElement) {
     contentElement.classList.add("active");
     iconElement.classList.add('icon-active');
-    activeIcon = contentElement;
+    activeIcon = contentElement; 
   }
   ratting = value;
   if (activeIcon) {
@@ -123,5 +126,10 @@ function handleNext() {
   }
 }
 function handleSkip() {
+  if (!oneTimeClicked) {
+    ratting = null;
+  } else {
+    feedback = null;
+  }
     handleNext();
 }

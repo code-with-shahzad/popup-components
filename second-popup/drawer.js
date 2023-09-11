@@ -108,5 +108,10 @@ function handleNext() {
 }
 
 function handleSkip() {
+  if (!oneTimeClicked) {
+     activeButtonValue = null;
+  } else {
+    feedback = null;
+  }
   handleNext();
 }

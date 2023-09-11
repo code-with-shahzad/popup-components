@@ -9,7 +9,7 @@ const feedbackMainElement = document.getElementById("feedback-main");
 const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
 const commentIcon = document.querySelectorAll(".commentIcon");
-const buttonContainer = document.querySelector('.btn-container')
+const buttonContainer = document.querySelector('.btn-container');
 
 let ratting = null;
 let feedback = null;
@@ -28,6 +28,7 @@ function handleReset() {
   ratting = null;
   feedback = null;
   feedbackMainElement.classList.remove('hide');
+  buttonContainer.classList.add('btn-container');
   buttonContainer.classList.remove('hide');
   nextButton.classList.add("btn-inactive");
   alert.classList.add("hide");
@@ -109,13 +110,12 @@ function handleNext() {
     nextButton.classList.add("btn-inactive");
     oneTimeClicked = true;
   } else {
+    buttonContainer.classList.add('hide');
+    buttonContainer.classList.remove('btn-container');
     alert.classList.remove("hide");
-    skipBtn.classList.add("hide");
     alert.classList.add("alert");
     textareaContainer.classList.add("hide");
     feedbackMainElement.classList.add("hide");
-    nextButton.classList.add("btn-active");
-    buttonContainer.classList.add('hide');
     console.log({ ratting, feedback });
     setTimeout(() => {
       expandDrawer();

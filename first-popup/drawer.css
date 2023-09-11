@@ -159,12 +159,12 @@ body {
   color: #fff;
 }
 .feedback {
-  border-right: 30px solid #3b5998; 
+  border-right: 38px solid #3b5998; 
   width: 0;
   height: 125px;
   border-radius: 5px 0 0 5px;
   position: absolute;
-  left: -29px;
+  left: -38px;
   top: 50%;
   transform: translateY(-50%);
   white-space: nowrap;

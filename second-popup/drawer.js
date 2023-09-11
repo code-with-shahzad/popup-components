@@ -13,7 +13,6 @@ let feedback = null;
 let oneTimeClicked = false;
 let activeButton = null;
 let activeButtonValue = null;
-let isSkipedFirstTime = false;
 
 for (let i = 0; i < 11; i++) {
   const button = document.createElement("button");
@@ -34,7 +33,6 @@ for (let i = 0; i < 11; i++) {
 
 function handleReset() {
   oneTimeClicked = false;
-  isSkipedFirstTime = false;
   activeButtonValue = null;
   feedback = null;
   nextButton.innerHTML = "Next";
@@ -97,23 +95,16 @@ function handleNext() {
     skipBtn.classList.add("hide");
     alert.classList.add("alert");
     textareaContainer.classList.add("hide");
+    nextButton.classList.remove("btn-inactive");
     nextButton.classList.add("btn-active");
     nextButton.innerHTML = "Close";
     console.log({ ratting: activeButtonValue, feedback });
     setTimeout(() => {
       expandDrawer();
-    }, 3000);
+    }, 2000);
   }
 }
 
 function handleSkip() {
-  if (!isSkipedFirstTime) {
-    if (!oneTimeClicked) {
-      activeButtonValue = null;
-    } else {
-      feedback = null;
-    }
-    handleNext();
-    isSkipedFirstTime = true;
-  }
+  handleNext();
 }

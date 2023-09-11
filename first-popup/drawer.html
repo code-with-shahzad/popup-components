@@ -15,35 +15,35 @@
             <div class="drawer-title">How would you rate your experience?</div>
             <div class="drawer-items">
               <div class="icon-wrapper" onclick="handleClickOnImage('Hate')">
-                <span class="icon commentIcon"></span>
+                <span class="icon commentIcon icon-hate"></span>
                 <span class="icon first-expressionIcon"></span>
                 <div class="content content-hate">Hate</div>
               </div>
               <div class="icon-wrapper" onclick="handleClickOnImage('Dislike')">
-                <span class="icon commentIcon"></span>
+                <span class="icon commentIcon icon-dislike"></span>
                 <span class="icon second-expressionIcon"></span>
                 <div class="content content-dislike">Dislike</div>
               </div>
               <div class="icon-wrapper" onclick="handleClickOnImage('Neutral')">
-                <span class="icon commentIcon"></span>
+                <span class="icon commentIcon icon-neutral"></span>
                 <span class="icon third-expressionIcon"></span>
                 <div class="content content-neutral">Neutral</div>
               </div>
               <div class="icon-wrapper" onclick="handleClickOnImage('Like')">
-                <span class="icon commentIcon"></span>
+                <span class="icon commentIcon icon-like"></span>
                 <span class="icon fourth-expressionIcon"></span>
                 <div class="content content-like">Like</div>
               </div>
               <div class="icon-wrapper" onclick="handleClickOnImage('Love')">
-                <span class="icon commentIcon"></span>
+                <span class="icon commentIcon icon-love"></span>
                 <span class="icon fifth-expressionIcon"></span>
                 <div class="content content-love">Love</div>
               </div>
             </div>
-            <div class="feedback-text">
+            <!-- <div class="feedback-text">
               <div>Not good at all</div>
               <div>Very good</div>
-            </div>
+            </div> -->
           </div>
           <div id="textareae-container" class="hide">
             <div class="drawer-title">Tell us about your experience...</div>
@@ -57,7 +57,7 @@
             <div class="message">Thanks for your feedback!</div>
           </div>
           <div class="btn-container">
-            <div id="skip" onclick="handleSkip()" class="skip">Skip</div>
+            <button id="skip" onclick="handleSkip()" class="skip">Skip</button>
             <button
               onclick="handleNext()"
               id="next-btn"

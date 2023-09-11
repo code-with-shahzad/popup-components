@@ -7,21 +7,23 @@ const skipBtn = document.getElementById("skip");
 const feedbackElement = document.getElementById("feedback");
 const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
+const commentIcon = document.querySelectorAll(".commentIcon");
 let ratting = null;
 let feedback = null;
 let oneTimeClicked = false;
 let activeIcon = null;
-let isSkipedFirstTime = false;
 
 function handleReset() {
   activeIcon = null;
   content.forEach((item) => {
     item.classList.remove("active");
   });
+  commentIcon.forEach(icon=> {
+    icon.classList.remove('icon-active')
+  })
   oneTimeClicked = false;
   ratting = null;
   feedback = null;
-  isSkipedFirstTime = false;
   nextButton.innerHTML = "Next";
   nextButton.classList.add("btn-inactive");
   alert.classList.add("hide");
@@ -62,14 +64,16 @@ function expandDrawer() {
 }
 
 function handleClickOnImage(value) {
-  const expressionIcons = document.querySelectorAll(".content");
-  expressionIcons.forEach((icon) => {
+  content.forEach((icon) => {
     icon.classList.remove("active");
   });
+  let iconElement = null;
   let contentElement = null;
   contentElement = document.querySelector(`.content-${value.toLowerCase()}`);
-  if (contentElement) {
+  iconElement = document.querySelector(`.icon-${value.toLowerCase()}`);
+  if (contentElement && iconElement) {
     contentElement.classList.add("active");
+    iconElement.classList.add('icon-active');
     activeIcon = contentElement;
   }
   ratting = value;
@@ -112,17 +116,9 @@ function handleNext() {
     console.log({ ratting, feedback });
     setTimeout(() => {
       expandDrawer();
-    }, 3000);
+    }, 2000);
   }
 }
 function handleSkip() {
-  if (!isSkipedFirstTime) {
-    if (!oneTimeClicked) {
-      ratting = null;
-    } else {
-      feedback = null;
-    }
     handleNext();
-    isSkipedFirstTime = true;
-  }
 }

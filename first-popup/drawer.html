@@ -55,6 +55,7 @@
           </div>
           <div id="alert" class="hide">
             <div class="message">Thanks for your feedback!</div>
+            <button type="button" onclick="expandDrawer()" class="btn-active">Close</button>
           </div>
           <div class="btn-container">
             <button id="skip" onclick="handleSkip()" class="skip">Skip</button>
@@ -68,7 +69,7 @@
             </button>
           </div>
         </div>
-        <div onclick="expandDrawer()" class="feedback">
+        <div id="feedback-main" onclick="expandDrawer()" class="feedback">
           <p>Feedback</p>
           <div class="slide-wrapper" id="feedback">
             <div id="vector-wrapper">

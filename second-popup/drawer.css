@@ -190,6 +190,7 @@ body {
 .message {
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 .slide-img {
  width: 10px;

@@ -5,9 +5,12 @@ const nextButton = document.getElementById("next-btn");
 const alert = document.getElementById("alert");
 const skipBtn = document.getElementById("skip");
 const feedbackElement = document.getElementById("feedback");
+const feedbackMainElement = document.getElementById("feedback-main");
 const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
 const commentIcon = document.querySelectorAll(".commentIcon");
+const buttonContainer = document.querySelector('.btn-container')
+
 let ratting = null;
 let feedback = null;
 let oneTimeClicked = false;
@@ -24,7 +27,8 @@ function handleReset() {
   oneTimeClicked = false;
   ratting = null;
   feedback = null;
-  nextButton.innerHTML = "Next";
+  feedbackMainElement.classList.remove('hide');
+  buttonContainer.classList.remove('hide');
   nextButton.classList.add("btn-inactive");
   alert.classList.add("hide");
   rattingContainer.classList.remove("hide");
@@ -97,9 +101,7 @@ function handleValueChange(event) {
 }
 
 function handleNext() {
-  if (nextButton.innerHTML === "Close") {
-    expandDrawer();
-  } else if (!oneTimeClicked) {
+  if (!oneTimeClicked) {
     rattingContainer.classList.add("hide");
     textareaContainer.classList.remove("hide");
     textareaContainer.classList.add("textarea-container");
@@ -111,8 +113,9 @@ function handleNext() {
     skipBtn.classList.add("hide");
     alert.classList.add("alert");
     textareaContainer.classList.add("hide");
+    feedbackMainElement.classList.add("hide");
     nextButton.classList.add("btn-active");
-    nextButton.innerHTML = "Close";
+    buttonContainer.classList.add('hide');
     console.log({ ratting, feedback });
     setTimeout(() => {
       expandDrawer();

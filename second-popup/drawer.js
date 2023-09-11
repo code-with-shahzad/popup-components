@@ -7,8 +7,10 @@ const skipBtn = document.getElementById("skip");
 const drawerButton = document.getElementById("drawer-btn");
 const drawerItems = document.getElementById("drawer-items");
 const feedbackElement = document.getElementById("feedback");
+const feedbackMainElement = document.getElementById("feedback-main");
 const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
+const buttonContainer = document.querySelector('.btn-container')
 let feedback = null;
 let oneTimeClicked = false;
 let activeButton = null;
@@ -35,7 +37,8 @@ function handleReset() {
   oneTimeClicked = false;
   activeButtonValue = null;
   feedback = null;
-  nextButton.innerHTML = "Next";
+  buttonContainer.classList.remove('hide');
+  feedbackMainElement.classList.remove('hide');
   nextButton.classList.add("btn-inactive");
   alert.classList.add("hide");
   rattingContainer.classList.remove("hide");
@@ -81,9 +84,7 @@ function handleValueChange(event) {
 }
 
 function handleNext() {
-  if (nextButton.innerHTML === "Close") {
-    expandDrawer();
-  } else if (!oneTimeClicked) {
+  if (!oneTimeClicked) {
     rattingContainer.classList.add("hide");
     textareaContainer.classList.remove("hide");
     textareaContainer.classList.add("textarea-container");
@@ -97,7 +98,8 @@ function handleNext() {
     textareaContainer.classList.add("hide");
     nextButton.classList.remove("btn-inactive");
     nextButton.classList.add("btn-active");
-    nextButton.innerHTML = "Close";
+    feedbackMainElement.classList.add('hide');
+    buttonContainer.classList.add('hide');
     console.log({ ratting: activeButtonValue, feedback });
     setTimeout(() => {
       expandDrawer();

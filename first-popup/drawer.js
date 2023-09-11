@@ -10,6 +10,7 @@ const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
 const commentIcon = document.querySelectorAll(".commentIcon");
 const buttonContainer = document.querySelector('.btn-container');
+const drawerMain = document.getElementById('drawer-main');
 
 let ratting = null;
 let feedback = null;
@@ -120,9 +121,6 @@ function handleNext() {
     textareaContainer.classList.add("hide");
     feedbackMainElement.classList.add("hide");
     console.log({ ratting, feedback });
-    setTimeout(() => {
-      expandDrawer();
-    }, 2000);
   }
 }
 function handleSkip() {
@@ -132,4 +130,7 @@ function handleSkip() {
     feedback = null;
   }
     handleNext();
+}
+function handleClose() {
+  drawerMain.classList.add('hide');
 }

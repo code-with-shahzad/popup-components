@@ -10,7 +10,9 @@ const feedbackElement = document.getElementById("feedback");
 const feedbackMainElement = document.getElementById("feedback-main");
 const content = document.querySelectorAll(".content");
 const vectorWrapper = document.getElementById("vector-wrapper");
-const buttonContainer = document.querySelector('.btn-container')
+const buttonContainer = document.querySelector('.btn-container');
+const drawerMain = document.getElementById('drawer-main');
+
 let feedback = null;
 let oneTimeClicked = false;
 let activeButton = null;
@@ -101,9 +103,6 @@ function handleNext() {
     feedbackMainElement.classList.add('hide');
     buttonContainer.classList.add('hide');
     console.log({ ratting: activeButtonValue, feedback });
-    setTimeout(() => {
-      expandDrawer();
-    }, 2000);
   }
 }
 
@@ -114,4 +113,7 @@ function handleSkip() {
     feedback = null;
   }
   handleNext();
+}
+function handleClose() {
+  drawerMain.classList.add('hide');
 }

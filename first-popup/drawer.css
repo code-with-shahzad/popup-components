@@ -138,7 +138,7 @@ body {
 }
 .slider:before {
   content: "\e907";
-  color: #3061cc;
+  color: #324FBE;
   position: absolute;
   font-size: 10px;
 }
@@ -159,7 +159,7 @@ body {
   color: #fff;
 }
 .feedback {
-  border-right: 38px solid #3b5998; 
+  border-right: 38px solid #324FBE; 
   width: 0;
   height: 125px;
   border-radius: 5px 0 0 5px;
@@ -197,7 +197,7 @@ body {
   padding: 8px;
   margin: 5px 0;
   &:focus-within {
-    outline-color: #324fbe !important;
+    outline-color: #324FBE !important;
     outline: 2px solid;
     outline-offset: 1px;
   }
@@ -233,8 +233,16 @@ body {
  border: none;
  cursor: pointer;
  pointer-events: all;
- background: #3061cc;
+ background: #324FBE;
  color: #fff;
+ &:hover {
+  background: #1c3286;
+}
+&:focus-within, :focus-visible, :focus {
+  outline-color: #324FBE !important;
+  outline: 2px solid;
+  outline-offset: 1px;
+}
 }
 .btn-container {
   border-top: 1px solid #e8e8e8;
